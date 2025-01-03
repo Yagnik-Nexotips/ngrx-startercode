@@ -11,6 +11,7 @@ import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { groceryReducer } from './components/store/reducers/grocery.reducer';
+import { bucketReducer } from './components/store/reducers/bucket.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,6 +20,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideStore({
       groceries: groceryReducer,
+      myBucket: bucketReducer,
     }),
     provideEffects(),
     provideStoreDevtools({
